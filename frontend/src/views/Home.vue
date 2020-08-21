@@ -1,24 +1,51 @@
 <template>
-  <Layout>
-    <template #menubar>
-      <v-btn @click="start('Home')" text color="blue-gry lighten-5"
-        style="padding: 10px; width: 90px;">Home</v-btn>
-      <v-btn @click="start('Home')" text color="blue-gry lighten-5"
-        style="padding: 10px; width: 90px;">About WW</v-btn>
-      <v-btn @click="start('Home')" text color="blue-gry lighten-5"
-        style="padding: 10px; width: 90px;">WW exhibition</v-btn>
-      <v-btn @click="start('Home')" text color="blue-gry lighten-5"
-       style="padding: 10px; width: 90px;">Open Diary</v-btn>
-      <v-btn @click="start('Home')" text color="blue-gry lighten-5"
-       style="padding: 10px; width: 90px;">Open Documentary</v-btn>
-    </template>
-  </Layout>
+  <div class="home">
+    <div id="header">
+    <router-link :to="{ name: 'Home' }"
+        class="nav-link"
+        active-class="active">
+      Home
+    </router-link>
+    <router-link :to="{ name: 'About' }"
+        class="nav-link"
+        active-class="active">
+      About Us
+    </router-link>
+    </div>
+    <div id="header">
+      <button id="login" @click="$router.push('SignupPage')">
+        Sign up
+      </button>
+    </div>
+  </div>
 </template>
 
-import Layout from '../components/Layout'
-import { mapState } from 'vuex'
-
-export default {
-  components: { Layout }
-    }
+<style scoped>
+div {
+  border: 1px solid #ccc;
 }
+
+#header {
+  padding: 15px;
+  margin-bottom: 15px;
+  margin: 5px 5px;
+}
+
+img {
+  width: auto;
+  height: auto;
+  max-width: 1000px;
+  max-height: 350px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#login {
+  background-color: #F48FB1;
+  color: #ffffff;
+  font-weight: bold;
+  float: right;
+}
+
+</style>

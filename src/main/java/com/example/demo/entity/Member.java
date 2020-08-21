@@ -35,7 +35,17 @@ public class Member {
     @Column(length = 2000, nullable = false)
     private String Fartist;
 
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "userid")
 
+    public void addAuth(MemberAuth auth) {
+        authList.add(auth);
+    }
+
+    public void clearAuthList() {
+        authList.clear();
+    }
+}
 
 
 }
