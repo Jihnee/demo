@@ -13,8 +13,6 @@ public class DemoApplication {
 	// SpringApplication.run 하면
 	// 웹 서버가 구동된다 - 서비스 번호: 8080
 	public static void main(String[] args) {
-		HelloSpring hs = new HelloSpring();
-		log.info(hs.print());
 
 		SpringApplication.run(DemoApplication.class, args);
 	}
