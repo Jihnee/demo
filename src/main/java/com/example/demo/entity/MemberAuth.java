@@ -14,9 +14,13 @@ import javax.persistence.*;
 public class MemberAuth {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long userid;
+    private Long userAuthNo;
+
+    @Column(name = "user_no")
+    private Long userNo;
 
     @Column(length = 50)
     private String auth;
+
 
 }

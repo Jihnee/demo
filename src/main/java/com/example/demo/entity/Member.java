@@ -1,33 +1,40 @@
 package com.example.demo.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.springframework.stereotype.Controller;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
-@JsonIgnoreProperties
+@JsonIgnoreProperties(value="hibernateLazyInitializer")
 @Getter
 @Setter
+@EqualsAndHashCode(of = "userNo")
 @ToString
 @Entity
 @Table(name = "member")
 public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "userid")
-    private Long userid;
+    @Column(name = "user_no")
+    private Long userNo;
 
     @Column(length = 50, nullable = false)
-    private String username;
+    private String userId;
 
-    @Column(length = 50, nullable = false)
-    private String nickname;
+    @Column(length = 100, nullable = false)
+    private String userName;
 
     @Column(length = 200, nullable = false)
-    private String userpw;
+    private String userPw;
+
+    @Column(length = 200, nullable = false)
+    private String userCPw;
 
     @Column(length = 2000, nullable = false)
     private String Fex;
@@ -35,8 +42,12 @@ public class Member {
     @Column(length = 2000, nullable = false)
     private String Fartist;
 
+    @Column(length = 30, nullable = false)
+    private String userE;
+
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "userid")
+    @JoinColumn(name = "user_no")
+    private List<MemberAuth> authList = new ArrayList<MemberAuth>();
 
     public void addAuth(MemberAuth auth) {
         authList.add(auth);
@@ -48,4 +59,4 @@ public class Member {
 }
 
 
-}
+
