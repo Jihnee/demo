@@ -3,9 +3,9 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/WW?serverTimezone=UTC&useSSL=false
-    username: bitai
-    password: 456123
+    url: jdbc:mysql://localhost:3306/WWdb?serverTimezone=UTC&useSSL=false
+    username: dbuser
+    password: 1111
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:

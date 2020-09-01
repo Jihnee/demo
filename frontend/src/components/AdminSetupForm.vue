@@ -1,5 +1,5 @@
 <template>
-  <v-form><br><br><br><br><br><br><br><br><br>
+  <v-form @submit.prevent="{submit}"><br><br><br><br><br><br><br><br><br>
     <v-container>
       <v-row>
         <v-col cols="12" sm="3">
@@ -55,18 +55,19 @@
             value=""
             label="E-mail address"
             input type="email" v-model="userE"
-            :rules="[rules.required, rules.email]"
+            :rules="[rules.required, rules.userE]"
           ></v-text-field>
         </v-col>
       </v-row>
     </v-container>
     <div>
-    <v-btn type="submit" color="red white--text">가입하기 </v-btn>
+      <v-btn type="submit" color="red white--text" @click="submit">가입하기 </v-btn>
     </div>
   </v-form>
 </template>
 
 <script>
+
 export default {
   name: 'AdminSetupForm',
   data () {
@@ -77,22 +78,22 @@ export default {
       userCPw: '',
       Fex: '',
       Fartist: '',
-      email: '',
+      userE: '',
       rules: {
         required: value => !!value || 'Required.',
-        counter: value => value.length <= 50 || 'Max 50 characters',
-        email: value => {
-          const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-          return pattern.test(value) || 'Invalid e-mail.'
-        }
+        counter: value => value.length <= 50 || 'Max 50 characters'
       },
-      methods: {
-        submit (payload) {
-          console.log('this: ' + this.userId + ', ' + this.userName + ', ' + this.userPw)
-          const { userId, userName, userPw, userCPw, Fex, Fartist } = this
-          this.$emit('submit', { userId, userName, userPw, userCPw, Fex, Fartist })
-        }
-      }
+      emailRules: [
+        v => !!v || 'E-mail is required',
+        v => /.+@.+\..+/.test(v) || 'E-mail must be valid'
+      ]
+    }
+  },
+  methods: {
+    submit () {
+      console.log('this: ' + this.userId + ', ' + this.userName + ', ' + this.userPw)
+      const { userId, userName, userPw, userCPw, Fex, Fartist } = this
+      this.$emit('submit', { userId, userName, userPw, userCPw, Fex, Fartist })
     }
   }
 }

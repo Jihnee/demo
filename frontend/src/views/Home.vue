@@ -4,6 +4,9 @@
       <template #content>
         <AdminSetupForm v-if="isSignUp" @submit="onSubmit"></AdminSetupForm>
       </template>
+      <div class="header" v-if="isAuthorized">
+        <button id="login" @click="onClickLogout">Logout</button>
+      </div>
     </Layout>
   </div>
 </template>
@@ -12,7 +15,6 @@
 // import axios from 'axios'
 import Layout from '../components/Layout'
 import { mapState, mapActions, mapGetters } from 'vuex'
-
 export default {
   data: function () {
     return {

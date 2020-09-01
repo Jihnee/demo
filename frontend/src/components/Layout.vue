@@ -22,25 +22,25 @@
         <slot name="menubar"></slot>
         <v-spacer></v-spacer>
         <v-btn id="home" @click='home'
-          text color="white" style="padding: 10px 75px; width: 90px;">HOME</v-btn>
+               text color="white" style="padding: 10px 75px; width: 90px;">HOME</v-btn>
         <v-btn @click='aboutUs' text color="white"
-          style="padding: 10px 80px; width: 90px;">ABOUT US</v-btn>
+               style="padding: 10px 80px; width: 90px;">ABOUT US</v-btn>
         <v-btn @click="start('wExhibition')" text color="white"
-          style="padding: 10px 100px; width: 90px;">WW EXHIBITION</v-btn>
+               style="padding: 10px 100px; width: 90px;">WW EXHIBITION</v-btn>
         <v-btn @click="start('information')" text color="white"
-          style="padding: 10px 85px; width: 90px;">INFORMATION</v-btn>
+               style="padding: 10px 85px; width: 90px;">INFORMATION</v-btn>
         <v-btn @click="start('Bgallery')" text color="white"
-          style="padding: 10px 100px; width: 90px;">BOARD GALLERY</v-btn>
+               style="padding: 10px 100px; width: 90px;">BOARD GALLERY</v-btn>
         <div class="home">
           <v-btn id="login" @click="$router.push('SignupPage')"
-           rounded color="lime darken-2 white--text" style="margin-left: 280px; margin-top: 7px" >
+                 rounded color="lime darken-2 white--text" style="margin-left: 280px; margin-top: 7px" >
             SIGN UP
           </v-btn>
         </div>
         <v-btn @click="$router.push('LoginPage')"
-          rounded color="lime darken-2 white--text" style="margin-right: 65px; margin-left: 10px;
+               rounded color="lime darken-2 white--text" style="margin-right: 65px; margin-left: 10px;
                                                                                    margin-top: 7px">
-         LOGIN
+          LOGIN
         </v-btn>
       </v-app-bar>
       <v-navigation-drawer
@@ -60,7 +60,7 @@
       </v-navigation-drawer>
       <v-container>
         <v-content id="content">
-         <slot name="content" class="font">
+          <slot name="content" class="font">
           </slot>
         </v-content>
       </v-container>
@@ -70,7 +70,6 @@
 
 <script>
 import router from '../router'
-
 export default {
   name: 'Layout',
   data: () => ({

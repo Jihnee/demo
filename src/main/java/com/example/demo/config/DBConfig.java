@@ -17,10 +17,10 @@ public class DBConfig {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUrl(
-                "jdbc:mysql://localhost:3306/WW?serverTimezone=UTC&useSSL=false"
+                "jdbc:mysql://localhost:3306/WWdb?serverTimezone=UTC&useSSL=false"
         );
-        dataSource.setUsername("bitai");
-        dataSource.setPassword("456123");
+        dataSource.setUsername("dbuser");
+        dataSource.setPassword("1111");
         return dataSource;
     }
 }
