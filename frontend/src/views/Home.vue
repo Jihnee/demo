@@ -2,36 +2,41 @@
   <div>
     <Layout>
       <template #content>
-        <AdminSetupForm v-if="isSignUp" @submit="onSubmit"></AdminSetupForm>
       </template>
-      <div class="header" v-if="isAuthorized">
-        <button id="login" @click="onClickLogout">Logout</button>
-      </div>
     </Layout>
+    <v-carousel :show-arrows="false">
+      <v-carousel-item
+        v-for="(item,i) in items"
+        :key="i"
+        :src="item.src"
+      ></v-carousel-item>
+    </v-carousel>
   </div>
 </template>
 
 <script>
 // import axios from 'axios'
 import Layout from '../components/Layout'
-import { mapState, mapActions, mapGetters } from 'vuex'
+// import { mapGetters } from 'vuex'
+// import { mapState } from 'vuex'
+
 export default {
+  name: 'Home',
   data: function () {
     return {
+      items: [
+        {
+          src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg'
+        },
+        {
+          src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg'
+        },
+        {
+          src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg'
+        }
+      ]
     }
   },
-  components: { Layout },
-  methods: {
-    onClickLogout () {
-      this.logout()
-      alert('Success Logout')
-      this.$router.push({ name: 'Home' })
-    },
-    ...mapActions(['logout'])
-  },
-  computed: {
-    ...mapState(['myinfo']),
-    ...mapGetters(['isAuthorized'])
-  }
+  components: { Layout }
 }
 </script>

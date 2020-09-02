@@ -1,9 +1,9 @@
 <template>
-  <layout>
-    <template #content>
+  <Layout>
+    <v-content>
      <AdminSetupForm v-if="isSignUp" @submit="onSubmit"></AdminSetupForm>
-    </template>
-  </layout>
+    </v-content>
+  </Layout>
 </template>
 
 <script>
