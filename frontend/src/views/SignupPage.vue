@@ -1,9 +1,9 @@
 <template>
-  <Layout>
-    <v-content>
-     <AdminSetupForm v-if="isSignUp" @submit="onSubmit"></AdminSetupForm>
-    </v-content>
-  </Layout>
+  <div>
+    <Layout>
+    </Layout>
+    <admin-setup-form v-if="isSignUp" @submit="onSubmit" :isTrueSignUp="isSignUp"></admin-setup-form>
+  </div>
 </template>
 
 <script>
@@ -25,8 +25,8 @@ export default {
   methods: {
     onSubmit (payload) {
       console.log('payload: ' + payload.userId + ', ' + payload.userName + ', ' + payload.userPw)
-      const { userId, userName, userPw, userCPw, Fex, Fartist } = payload
-      axios.post('http://localhost:24688/users/setup', { userId, userName, userPw, userCPw, Fex, Fartist })
+      const { userId, userName, userPw, fex, fartist, usere } = payload
+      axios.post('http://localhost:24688/users/setup', { userId, userName, userPw, fex, fartist, usere })
         .then(res => {
           alert('성공적으로 가입되었습니다. ')
           this.$router.push({

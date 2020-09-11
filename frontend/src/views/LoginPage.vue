@@ -1,9 +1,9 @@
 <template>
-  <layout>
-    <template #content><br><br><br><br><br><br><br><br>
-      <LoginForm @submit="onSubmit"></LoginForm>
-    </template>
-  </layout>
+  <div>
+    <Layout>
+    </Layout>
+    <LoginForm @submit="onSubmit"></LoginForm>
+  </div>
 </template>
 
 <script>

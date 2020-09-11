@@ -4,6 +4,8 @@ import Home from '../views/Home.vue'
 import LoginPage from '../views/LoginPage.vue'
 import SignupPage from '../views/SignupPage.vue'
 import AboutUs from '../views/AboutUs.vue'
+import WexhibitionPage from '../views/WexhibitionPage.vue'
+import BoardGalleryPage from '../views/BoardGalleryPage.vue'
 
 // Login System
 
@@ -34,6 +36,20 @@ const routes = [
     name: 'SignupPage',
     components: {
       default: SignupPage
+    }
+  },
+  {
+    path: '/WexhibitionPage',
+    name: 'WexhibitionPage',
+    components: {
+      default: WexhibitionPage
+    }
+  },
+  {
+    path: '/BoardGalleryPage',
+    name: 'BoardGalleryPage',
+    components: {
+      default: BoardGalleryPage
     }
   }
 ]

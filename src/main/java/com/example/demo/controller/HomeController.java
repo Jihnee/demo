@@ -85,7 +85,7 @@ public class HomeController {
         return new ResponseEntity<>(member, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/setup",
+    @RequestMapping(value = "/users/setup",
             method = RequestMethod.POST,
             produces = "text/plain;charset=UTF-8")
     public ResponseEntity<String> setupAdmin(@Validated @RequestBody Member member)

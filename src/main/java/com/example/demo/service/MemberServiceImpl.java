@@ -24,10 +24,10 @@ public class MemberServiceImpl implements MemberService {
         Member memEntity = new Member();
         memEntity.setUserId(member.getUserId());
         memEntity.setUserPw(member.getUserPw());
-        memEntity.setUserCPw(member.getUserCPw());
         memEntity.setUserName(member.getUserName());
         memEntity.setFex(member.getFex());
         memEntity.setFartist(member.getFartist());
+        memEntity.setUsere(member.getUsere());
 
         MemberAuth memberAuth = new MemberAuth();
         memberAuth.setAuth("ROLE_MEMBER");
@@ -45,10 +45,11 @@ public class MemberServiceImpl implements MemberService {
         Member memEntity = new Member();
         memEntity.setUserId(member.getUserId());
         memEntity.setUserPw(member.getUserPw());
-        memEntity.setUserCPw(member.getUserCPw());
         memEntity.setUserName(member.getUserName());
         memEntity.setFex(member.getFex());
         memEntity.setFartist(member.getFartist());
+        memEntity.setUsere(member.getUsere());
+
 
         MemberAuth memberAuth = new MemberAuth();
         memberAuth.setAuth("ROLE_ADMIN");
@@ -101,10 +102,10 @@ public class MemberServiceImpl implements MemberService {
             mem.setUserNo((Long) valArr[0]);
             mem.setUserId((String) valArr[1]);
             mem.setUserPw((String) valArr[2]);
-            mem.setUserCPw((String) valArr[3]);
-            mem.setUserName((String) valArr[4]);
-            mem.setFex((String) valArr[5]);
-            mem.setFartist((String) valArr[6]);
+            mem.setUserName((String) valArr[3]);
+            mem.setFex((String) valArr[4]);
+            mem.setFartist((String) valArr[5]);
+            mem.setUsere((String) valArr[6]);
 
             memberList.add(mem);
         }

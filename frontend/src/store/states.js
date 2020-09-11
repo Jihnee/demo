@@ -3,5 +3,7 @@ export default {
   accessToken: '',
   myinfo: null,
   lists: [],
-  isTrueSignUp: false
+  isTrueSignUp: false,
+  boards: [],
+  board: null
 }

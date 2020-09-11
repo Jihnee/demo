@@ -33,17 +33,14 @@ public class Member {
     @Column(length = 200, nullable = false)
     private String userPw;
 
-    @Column(length = 200, nullable = false)
-    private String userCPw;
+    @Column(length = 2000, nullable = false)
+    private String fex;
 
     @Column(length = 2000, nullable = false)
-    private String Fex;
-
-    @Column(length = 2000, nullable = false)
-    private String Fartist;
+    private String fartist;
 
     @Column(length = 30, nullable = false)
-    private String userE;
+    private String usere;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "user_no")

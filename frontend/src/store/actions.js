@@ -2,7 +2,9 @@ import {
   SET_ACCESS_TOKEN,
   SET_MY_INFO,
   DESTROY_ACCESS_TOKEN,
-  DESTROY_MY_INFO
+  DESTROY_MY_INFO,
+  FETCH_BOARD_LIST,
+  FETCH_BOARD
 } from './mutation-types'
 
 import axios from 'axios'
@@ -36,5 +38,19 @@ export default {
   logout ({ commit }) {
     commit(DESTROY_MY_INFO)
     commit(DESTROY_ACCESS_TOKEN)
+  },
+  fetchBoardList ({ commit }) {
+    return axios.get('http://localhost:24688/boards')
+      .then(res => {
+        commit(FETCH_BOARD_LIST, res.data)
+      })
+  },
+  fetchBoard ({ commit }, boardNo) {
+    console.log('fetchBoard ' + commit + ', boardNo = ' + boardNo)
+    return axios.get(`http://localhost:24688/boards/${boardNo}`)
+      .then(res => {
+        console.log('fetchBoard - res: ' + res.data)
+        commit(FETCH_BOARD, res.data)
+      })
   }
 }

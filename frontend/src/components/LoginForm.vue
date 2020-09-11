@@ -21,7 +21,8 @@
               ></v-text-field>
           </v-col>
          <div class="text-center">
-           <v-btn @click="submit" rounded color="green lighten-2 white--text" style="margin-left: 1050px">SIGN IN</v-btn>
+           <v-btn @click="submit" :isAuthorized="isAuthorized"
+                  rounded color="green lighten-2 white--text" style="margin-left: 1050px">SIGN IN</v-btn>
          </div>
         </v-row>
       </v-container>

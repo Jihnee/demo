@@ -9,7 +9,7 @@
 import Layout from '../components/Layout'
 
 export default {
-  name: 'AboutUs',
+  name: 'Wexhibition',
   components: {
     Layout
   }
