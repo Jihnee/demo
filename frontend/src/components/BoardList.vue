@@ -1,7 +1,5 @@
 <template>
   <div>
-    <layout>
-    </layout>
     <table border="1">
       <tr>
         <th align="center" width="80">No.</th>
@@ -10,7 +8,7 @@
         <th align="center" width="180">Registration Date</th>
       </tr>
 
-      <tr v-if v-for="boardGallery in boards" :key="boardGallery.boardNo">
+      <tr v-for="boardGallery in boards" :key="boardGallery.boardNo">
         <td align="center">{{ boardGallery.boardNo }}</td>
         <td align="left">
           <router-link :to="{ name: 'BoardReadPage',
@@ -26,7 +24,6 @@
 </template>
 
 <script>
-import Layout from '../components/Layout'
 
 export default {
   name: 'BoardList',
@@ -34,7 +31,6 @@ export default {
     boards: {
       type: Array
     }
-  },
-  components: { Layout }
+  }
 }
 </script>

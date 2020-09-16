@@ -2,10 +2,10 @@
   <div id="board">
     <layout>
     </layout>
-    <router-link :to="{ name: 'BoardGalleryPage' }">
-      Create New Board
-    </router-link>
-    <board-list :boards="boards"/>
+      <router-link :to="{ name: 'BoardGalleryPage' }">
+        Create New Board
+      </router-link>
+      <board-list :boards="boards"/>
   </div>
 </template>
 
