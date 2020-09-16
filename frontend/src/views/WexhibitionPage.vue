@@ -7,7 +7,6 @@
 
 <script>
 import Layout from '../components/Layout'
-
 export default {
   name: 'Wexhibition',
   components: {

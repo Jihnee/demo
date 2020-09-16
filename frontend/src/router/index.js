@@ -6,6 +6,7 @@ import SignupPage from '../views/SignupPage.vue'
 import AboutUs from '../views/AboutUs.vue'
 import WexhibitionPage from '../views/WexhibitionPage.vue'
 import BoardGalleryPage from '../views/BoardGalleryPage.vue'
+import BoardRegisterPage from '../views/BoardRegisterPage.vue'
 
 // Login System
 
@@ -50,6 +51,13 @@ const routes = [
     name: 'BoardGalleryPage',
     components: {
       default: BoardGalleryPage
+    }
+  },
+  {
+    path: '/BoardRegisterPage',
+    name: 'BoardRegisterPage',
+    components: {
+      default: BoardRegisterPage
     }
   }
 ]

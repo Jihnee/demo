@@ -2,15 +2,22 @@ package com.example.demo.controller;
 
 import com.example.demo.entity.BoardGallery;
 import com.example.demo.service.BoardService;
+import lombok.extern.java.Log;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
 
+import javax.validation.Valid;
 
+@RestController
+@RequestMapping("/boards")
 @Controller
 public class BoardController {
     private static final Logger log =
@@ -24,20 +31,22 @@ public class BoardController {
                                         throws Exception {
         log.info("getRegister()");
 
-        return "boardGallery/register";
+        return "board_gallery/register";
     }
 
-    @PostMapping("/postRegister")
-    public String postRegister(BoardGallery boardGallery, Model model)
-                                        throws Exception {
-        log.info("postRegister()");
+    @PostMapping("")
+    public ResponseEntity<BoardGallery> register(
+            @Validated @RequestBody BoardGallery boardGallery,
+            UriComponentsBuilder uriBuilder) throws Exception {
+        log.info("POST register()");
 
         service.register(boardGallery);
 
-        model.addAttribute("msg","Register Success");
+        log.info("register board_gallery.getBoardNo() = " + boardGallery.getBoardNo());
 
-        return "boardGallery/success";
+        return new ResponseEntity<>(boardGallery, HttpStatus.OK);
     }
+
 
     @GetMapping("/list")
     public String list(Model model) throws Exception {
@@ -46,7 +55,7 @@ public class BoardController {
         model.addAttribute("list",
                             service.list());
 
-        return "boardGallery/list";
+        return "board_gallery/list";
     }
 
     @GetMapping("/read")

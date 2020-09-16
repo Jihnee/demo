@@ -1,8 +1,15 @@
 <template>
   <div>
     <Layout>
+      <template #content>
+        <body>
+          <p class="jb-default">
+            <span>☆★ ♨WELCOME to WhiteWeb♨ ★☆</span>
+          </p>
+        </body>
+        <LoginForm @submit="onSubmit"></LoginForm>
+      </template>
     </Layout>
-    <LoginForm @submit="onSubmit"></LoginForm>
   </div>
 </template>
 
@@ -36,3 +43,7 @@ export default {
   }
 }
 </script>
+
+<style>
+  .jb-default { font-size: 32px; }
+</style>

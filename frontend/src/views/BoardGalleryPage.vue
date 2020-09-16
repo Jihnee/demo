@@ -1,11 +1,21 @@
 <template>
   <div id="board">
     <layout>
+      <template #content>
+        <p class="body-default">
+          <span>※『 ㉠ㅔ㉦ㅣ㉺㉡ 』※</span>
+        </p>
+          <br><v-row justify="center">
+            <div class="BT">
+              <v-btn class="BT" @click="$router.push('BoardRegisterPage')"
+                outlined color="lime accent-3 black--text">
+                ⓒⓡⓔⓐⓣⓔ → ⓝⓔⓦ ←  ⓑⓞⓐⓡⓓ
+              </v-btn>
+            </div>
+          </v-row>
+        <br><board-list :boards="boards"/>
+      </template>
     </layout>
-      <router-link :to="{ name: 'BoardGalleryPage' }">
-        Create New Board
-      </router-link>
-      <board-list :boards="boards"/>
   </div>
 </template>
 
@@ -33,3 +43,9 @@ export default {
 }
 
 </script>
+
+<style>
+  .body-default {
+    color: yellow;
+    font-size: 32px; }
+</style>

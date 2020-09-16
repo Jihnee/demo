@@ -16,7 +16,7 @@ import java.util.Date;
 @EqualsAndHashCode(of = "boardNo")
 @ToString
 @Entity
-@Table(name = "boardGallery")
+@Table(name = "board_gallery")
 public class BoardGallery {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
