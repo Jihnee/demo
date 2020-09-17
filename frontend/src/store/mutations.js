@@ -32,8 +32,8 @@ export default {
   [DESTROY_MY_INFO] (state) {
     state.myinfo = null
   },
-  [FETCH_BOARD] (state, board) {
-    state.board = board
+  [FETCH_BOARD] (state, boardGallery) {
+    state.boardGallery = boardGallery
   },
   [FETCH_BOARD_LIST] (state, boards) {
     state.boards = boards

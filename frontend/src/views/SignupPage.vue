@@ -1,8 +1,15 @@
 <template>
   <div>
     <Layout>
+      <template #content>
+        <body>
+          <p class="signUpman">
+            <br<br><span > 【 ㈍ㅗl 우┫㉡ㄱr  @┃㉥ 】</span>
+          </p>
+        </body>
+        <admin-setup-form v-if="isSignUp" @submit="onSubmit" :isTrueSignUp="isSignUp"></admin-setup-form>
+      </template>
     </Layout>
-    <admin-setup-form v-if="isSignUp" @submit="onSubmit" :isTrueSignUp="isSignUp"></admin-setup-form>
   </div>
 </template>
 
@@ -43,3 +50,10 @@ export default {
   }
 }
 </script>
+
+<style>
+.signUpman {
+  font-bolder: 10px;
+  font-size: 32px;
+}
+</style>

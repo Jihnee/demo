@@ -3,7 +3,7 @@
     <layout>
       <template #content>
         <p class="body-default">
-          <span>※『 ㉠ㅔ㉦ㅣ㉺㉡ 』※</span>
+          <br><span>※『 ㉠ㅔ㉦ㅣ㉺㉡ 』※</span>
         </p>
           <br><v-row justify="center">
             <div class="BT">
@@ -13,7 +13,7 @@
               </v-btn>
             </div>
           </v-row>
-        <br><board-list :boards="boards"/>
+        <br><board-list/>
       </template>
     </layout>
   </div>
@@ -34,8 +34,11 @@ export default {
   computed: {
     ...mapState(['boards'])
   },
-  mounted () {
+  created () {
     this.fetchBoardList()
+  },
+  mounted () {
+    console.log('mounted')
   },
   methods: {
     ...mapActions(['fetchBoardList'])

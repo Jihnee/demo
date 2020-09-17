@@ -3,11 +3,11 @@
     <Layout>
       <template #content>
         <body>
-          <p class="jb-default">
+          <p class="jb-default"><br>
             <span>☆★ ♨WELCOME to WhiteWeb♨ ★☆</span>
           </p>
         </body>
-        <LoginForm @submit="onSubmit"></LoginForm>
+        <LoginForm @submit="onSubmit" ></LoginForm>
       </template>
     </Layout>
   </div>

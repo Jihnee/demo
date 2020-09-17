@@ -1,5 +1,5 @@
 <template>
-  <div align="center">
+  <div class="bg" align="center">
     <board-register-form @submit="onSubmit"/>
   </div>
 </template>
@@ -34,3 +34,13 @@ export default {
 }
 
 </script>
+
+<style>
+.bg {
+   position: fixed;
+   left: 7%;
+   width: 130%;
+   height: 200%;
+   background-image: url(../assets/photodd.jpg);
+}
+</style>

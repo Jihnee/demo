@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("/boards")
@@ -26,12 +27,12 @@ public class BoardController {
     @Autowired
     private BoardService service;
 
-    @GetMapping("/getRegister")
-    public String getRegister(BoardGallery boardGallery, Model model)
+    @GetMapping("")
+    public ResponseEntity<List<BoardGallery>> list()
                                         throws Exception {
-        log.info("getRegister()");
+        log.info("list()");
 
-        return "board_gallery/register";
+        return new ResponseEntity<>(service.list(), HttpStatus.OK);
     }
 
     @PostMapping("")
@@ -47,57 +48,35 @@ public class BoardController {
         return new ResponseEntity<>(boardGallery, HttpStatus.OK);
     }
 
-
-    @GetMapping("/list")
-    public String list(Model model) throws Exception {
-        log.info("list()");
-
-        model.addAttribute("list",
-                            service.list());
-
-        return "board_gallery/list";
-    }
-
-    @GetMapping("/read")
-    public String read(int boardNo, Model model)
-                        throws Exception {
+    @GetMapping("/{boardNo}")
+    public ResponseEntity<BoardGallery> read(
+            @PathVariable("boardNo") Long boardNo) throws Exception {
         log.info("read()");
 
-        model.addAttribute(service.read(boardNo));
+        BoardGallery boardGallery = service.read(boardNo);
+        System.out.println("BoardController: " + boardGallery);
 
-        return "boardGallery/read";
+        return new ResponseEntity<BoardGallery>(boardGallery, HttpStatus.OK);
     }
 
-    @PostMapping("remove")
-    public String remove(int boardNo, Model model)
-                        throws Exception {
-
-        log.info("remove()");
+    @DeleteMapping("/{boardNo}")
+    public ResponseEntity<Void> remove(@PathVariable("boardNo") Long boardNo) throws Exception {
+        log.info("remove");
 
         service.remove(boardNo);
-
-        model.addAttribute("msg","Success Delete");
-
-        return "boardGallery/success";
+        return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
     }
 
-    @GetMapping("getModify")
-    public String modify(int boardNo, Model model) throws Exception {
+    @PutMapping("/{boardNo}")
+    public ResponseEntity<BoardGallery> modify(
+            @PathVariable("boardNo") Long boardNo,
+            @Validated @RequestBody BoardGallery boardGallery) throws Exception {
+        log.info("Put - modify()");
+        System.out.println(boardGallery);
 
-        log.info("getModify()");
-
-        model.addAttribute(service.read(boardNo));
-        return "boardGallery/modify";
-    }
-
-    @PostMapping("/postModify")
-    public String modify(BoardGallery boardGallery, Model model) throws Exception {
-
-        log.info("postModify()");
-
+        boardGallery.setBoardNo(boardNo);
         service.modify(boardGallery);
-        model.addAttribute("msg","modify Success");
 
-        return "boardGallery/success";
+        return new ResponseEntity<>(boardGallery, HttpStatus.OK);
     }
 }

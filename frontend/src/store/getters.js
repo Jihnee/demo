@@ -4,5 +4,8 @@ export default {
   },
   isSignUp (state) {
     return !state.isTrueSignUp
+  },
+  getBoard (state) {
+    return state.boards
   }
 }

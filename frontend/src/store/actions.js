@@ -42,6 +42,7 @@ export default {
   fetchBoardList ({ commit }) {
     return axios.get('http://localhost:24688/boards')
       .then(res => {
+        console.log(res.data)
         commit(FETCH_BOARD_LIST, res.data)
       })
   },

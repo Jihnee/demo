@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="hello">
     <Layout>
     </Layout>
   </div>
@@ -20,3 +20,13 @@ export default {
   components: { Layout }
 }
 </script>
+
+<style>
+.hello {
+   position: fixed;
+   left: 7%;
+   width: 130%;
+   height: 200%;
+   background-image: url(../assets/photo2.jpg);
+}
+</style>

@@ -24,12 +24,12 @@ public class BoardServiceImpl implements BoardService{
     }
 
     @Override
-    public BoardGallery read(Integer boardNo) throws Exception {
+    public BoardGallery read(Long boardNo) throws Exception {
         return boardRepository.read(boardNo);
     }
 
     @Override
-    public void remove(Integer boardNo) throws Exception {
+    public void remove(Long boardNo) throws Exception {
         boardRepository.remove(boardNo);
     }
 

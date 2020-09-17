@@ -5,5 +5,5 @@ export default {
   lists: [],
   isTrueSignUp: false,
   boards: [],
-  board: null
+  boardGallery: null
 }

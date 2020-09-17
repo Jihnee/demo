@@ -2,19 +2,19 @@
   <form @submit.prevent="onSubmit">
     <p class="body-default"><br><br>
       <span>※『 ㉠ㅔ㉦ㅣ㉺㉡ 』※</span>
-    </p>
-      <table class="tr" border="5" bordercolor="yellow" style="center">
+    </p><br>
+      <table class="tr" border="5" style="center">
         <tr>
-          <td>Title</td>
-          <td><input type="text" v-model="title"></td>
+          <td align="center" width="80">Title</td>
+          <td width="500"><input type="text" v-model="title"></td>
         </tr>
         <tr>
-          <td>Writer</td>
-          <td><input type="text" v-model="writer"></td>
+          <td align="center" width="80">Writer</td>
+          <td><input type="text" v-model="writer" height="20"></td>
         </tr>
         <tr>
-          <td>Content</td>
-          <td><textarea v-model="content" rows="5"></textarea></td>
+          <td align="center" width="80">Content</td>
+          <td><textarea v-model="content" cols="50" rows="20"></textarea></td>
         </tr>
       </table>
       <div>
@@ -44,3 +44,13 @@ export default {
   }
 }
 </script>
+
+<style>
+.tr {
+  border-color: #37474F;
+  border-width: 30px;
+}
+.body-default{
+  color: #37474F;
+}
+</style>

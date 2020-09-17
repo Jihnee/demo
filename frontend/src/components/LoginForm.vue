@@ -1,7 +1,7 @@
 <template>
   <Layout>
-    <v-form @submit.prevent="submit">
-      <v-container><br><br><br><br><br><br>
+    <v-form @submit.prevent="submit" >
+      <v-container><br><br><br><br>
         <v-row>
           <v-col cols="12" sm="6">
             <v-text-field
@@ -14,6 +14,7 @@
 
           <v-col cols="12" sm="6">
             <v-text-field
+              type="password"
               v-model="password"
               label="PASSWORD"
               outlined

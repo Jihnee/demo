@@ -27,7 +27,7 @@ public class BoardRepository {
     public void create(BoardGallery boardGallery) throws Exception {
         log.info("Repository create()");
 
-        String query = "insert into boardGallery(" +
+        String query = "insert into board_gallery(" +
                 "title, content, writer) values(?, ?, ?)";
         jdbcTemplate.update(query, boardGallery.getTitle(),
                 boardGallery.getContent(), boardGallery.getWriter());
@@ -38,7 +38,7 @@ public class BoardRepository {
 
         List<BoardGallery> results = jdbcTemplate.query(
                 "select board_no, title, content, " +
-                        "writer, reg_date from boardGallery " +
+                        "writer, reg_date from board_gallery " +
                         "where board_no > 0 order by " +
                         "board_no desc, reg_date desc",
 
@@ -57,10 +57,10 @@ public class BoardRepository {
         return results;
     }
 
-    public BoardGallery read(Integer boardNo) throws Exception {
+    public BoardGallery read(Long boardNo) throws Exception {
         List<BoardGallery> results = jdbcTemplate.query(
                 "select board_no, title, content, writer, " +
-                        "reg_date from boardGallery where board_no = ?",
+                        "reg_date from board_gallery where board_no = ?",
                 new RowMapper<BoardGallery>() {
                     @Override
                     public BoardGallery mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -72,6 +72,8 @@ public class BoardRepository {
                         boardGallery.setContent(rs.getString("content"));
                         boardGallery.setRegDate(rs.getDate("reg_date"));
 
+                        System.out.println("BoardRepository: " + boardGallery);
+
                         return boardGallery;
                     }
                 }, boardNo
@@ -80,13 +82,13 @@ public class BoardRepository {
         return results.isEmpty() ? null : results.get(0);
     }
 
-    public void remove(Integer boardNo) throws Exception {
-        String query = "delete from boardGallery where board_no = ?";
+    public void remove(Long boardNo) throws Exception {
+        String query = "delete from board_gallery where board_no = ?";
         jdbcTemplate.update(query, boardNo);
     }
 
     public void modify(BoardGallery boardGallery) throws Exception {
-        String query = "update boardGallery set title = ?, content = ? " +
+        String query = "update board_gallery set title = ?, content = ? " +
                         "where board_no = ?";
 
         jdbcTemplate.update(

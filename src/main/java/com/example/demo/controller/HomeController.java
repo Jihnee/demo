@@ -93,7 +93,6 @@ public class HomeController {
         log.info("setupAdmin: member.getUserName(): " + member.getUserName());
         log.info("setupAdmin: service.countAll(): " + service.countAll());
 
-        if (service.countAll() == 0) {
             String inputPassword = member.getUserPw();
             member.setUserPw(passwordEncoder.encode(inputPassword));
 
@@ -101,12 +100,7 @@ public class HomeController {
             service.setupMember(member);
 
             return new ResponseEntity<>("SUCCESS", HttpStatus.OK);
-        }
 
-        String message = messageSource.getMessage("common.cannotSetupAdmin",
-                null, Locale.KOREAN);
-
-        return new ResponseEntity<>(message, HttpStatus.BAD_REQUEST);
     }
 
     @GetMapping("/myinfo")

@@ -1,5 +1,5 @@
 <template>
-  <v-app id="layout" style="background-color: #90A4AE">
+  <v-app id="layout" style="background-color: #E0F7FA">
     <v-app-bar
       app
       color="transparent"
@@ -18,7 +18,7 @@
              text color="white" style="margin-right: 40px">WW EXHIBITION</v-btn>
       <v-btn id="information" text color="white"
              style="margin-right: 40px">INFORMATION</v-btn>
-      <v-btn id="gallery" @click="boardGallery" text color="white"
+      <v-btn id="gallery" @click="$router.push('BoardGalleryPage')" text color="white"
              style="margin-right: 40px">BOARD GALLERY</v-btn>
       <div class="home">
         <div id="login header" v-if="isAuthorized">
@@ -70,9 +70,6 @@ export default {
     },
     wExhibition () {
       (window.location.pathname !== '/Wexhibition') ? router.push('/Wexhibition') : router.go(0)
-    },
-    boardGallery () {
-      (window.location.pathname !== '/BoardGalleryPage') ? router.push('/BoardGalleryPage') : router.go(0)
     },
     onClickLogout () {
       this.logout()
