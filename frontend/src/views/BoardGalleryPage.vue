@@ -3,7 +3,10 @@
     <layout>
       <template #content>
         <p class="body-default">
-          <br><span>※『 ㉠ㅔ㉦ㅣ㉺㉡ 』※</span>
+          <br><span>※『 ㉠ㅔ㉦ㅣ㉺㉡ 』※
+          <br><br>
+          ※ 새로고침을 함부로 누르지 마시오 ※
+          </span>
         </p>
           <br><v-row justify="center">
             <div class="BT">

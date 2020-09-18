@@ -27,6 +27,6 @@ export default {
    left: 7%;
    width: 130%;
    height: 200%;
-   background-image: url(../assets/photo2.jpg);
+   background-image: url('../assets/photo2.jpg');
 }
 </style>

@@ -5,8 +5,11 @@ import LoginPage from '../views/LoginPage.vue'
 import SignupPage from '../views/SignupPage.vue'
 import AboutUs from '../views/AboutUs.vue'
 import WexhibitionPage from '../views/WexhibitionPage.vue'
+
 import BoardGalleryPage from '../views/BoardGalleryPage.vue'
 import BoardRegisterPage from '../views/BoardRegisterPage.vue'
+import BoardReadPage from '../views/BoardReadPage.vue'
+import BoardModifyPage from '../views/BoardModifyPage.vue'
 
 // Login System
 
@@ -58,6 +61,26 @@ const routes = [
     name: 'BoardRegisterPage',
     components: {
       default: BoardRegisterPage
+    }
+  },
+  {
+    path: '/boards/:boardNo',
+    name: 'BoardReadPage',
+    components: {
+      default: BoardReadPage
+    },
+    props: {
+      default: true
+    }
+  },
+  {
+    path: '/board/:boardNo/edit',
+    name: 'BoardModifyPage',
+    components: {
+      default: BoardModifyPage
+    },
+    props: {
+      default: true
     }
   }
 ]

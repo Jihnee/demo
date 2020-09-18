@@ -17,9 +17,10 @@ import org.springframework.web.util.UriComponentsBuilder;
 import javax.validation.Valid;
 import java.util.List;
 
+@Log
 @RestController
 @RequestMapping("/boards")
-@Controller
+@CrossOrigin(origins = "http://localhost:8080", allowedHeaders = "*")
 public class BoardController {
     private static final Logger log =
             LoggerFactory.getLogger(BoardController.class);
