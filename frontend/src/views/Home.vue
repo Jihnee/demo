@@ -1,32 +1,27 @@
 <template>
   <div class="hello">
-    <Layout>
-    </Layout>
+    <main-home-form>
+    </main-home-form>
   </div>
 </template>
 
 <script>
-// import axios from 'axios'
-import Layout from '../components/Layout'
-// import { mapGetters } from 'vuex'
-// import { mapState } from 'vuex'
+
+import MainHomeForm from '@/components/MainHomeForm'
 
 export default {
   name: 'Home',
-  data: function () {
-    return {
-    }
-  },
-  components: { Layout }
+  components: { MainHomeForm }
 }
+
 </script>
 
 <style>
 .hello {
    position: fixed;
-   left: 7%;
-   width: 130%;
-   height: 200%;
-   background-image: url('../assets/photo2.jpg');
+   width: 170%;
+   height: 500%;
+   background: url('../assets/image3.jpeg');
+   background-repeat: no-repeat;
 }
 </style>

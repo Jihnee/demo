@@ -1,16 +1,21 @@
 <template>
-  <layout>
-    <template #content>
-    </template>
-  </layout>
+  <div class="exhibition">
+    <Wexhibition-Form>
+    </Wexhibition-Form>
+  </div>
 </template>
 
 <script>
-import Layout from '../components/Layout'
+import WexhibitionForm from '@/components/WexhibitionForm'
+
 export default {
-  name: 'Wexhibition',
-  components: {
-    Layout
-  }
+  name: 'WexhibitionPage',
+  components: { WexhibitionForm }
 }
 </script>
+
+<style>
+.exhibition {
+  background: url('../assets/oeuvre1.jpg') left, url('../assets/oeuvre2.jpg') right;
+}
+</style>

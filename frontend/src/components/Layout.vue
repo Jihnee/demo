@@ -12,8 +12,6 @@
       </v-toolbar-title>
       <v-btn id="home" @click="home"
              text color="white" style="margin-right: 40px">HOME</v-btn>
-      <v-btn id="aboutUs" @click="aboutUs" text color="white"
-             style="margin-right: 40px">ABOUT US</v-btn>
       <v-btn id="exhibition" @click="wExhibition"
              text color="white" style="margin-right: 40px">WW EXHIBITION</v-btn>
       <v-btn id="information" text color="white"
@@ -64,9 +62,6 @@ export default {
   methods: {
     home () {
       (window.location.pathname !== '/') ? router.push('/') : router.go(0)
-    },
-    aboutUs () {
-      (window.location.pathname !== '/AboutUs') ? router.push('/AboutUs') : router.go(0)
     },
     wExhibition () {
       (window.location.pathname !== '/Wexhibition') ? router.push('/Wexhibition') : router.go(0)

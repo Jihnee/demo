@@ -3,7 +3,6 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import LoginPage from '../views/LoginPage.vue'
 import SignupPage from '../views/SignupPage.vue'
-import AboutUs from '../views/AboutUs.vue'
 import WexhibitionPage from '../views/WexhibitionPage.vue'
 
 import BoardGalleryPage from '../views/BoardGalleryPage.vue'
@@ -20,13 +19,6 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
-  },
-  {
-    path: '/AboutUs',
-    name: 'AboutUs',
-    components: {
-      default: AboutUs
-    }
   },
   {
     path: '/LoginPage',
