@@ -1,21 +1,5 @@
 <template>
-  <v-app id="layout" style="background-color: #E0F7FA">
-    <v-app-bar
-      app
-      color="transparent"
-      shrink-on-scroll
-      src="https://t1.daumcdn.net/cfile/blog/9922123D5B39985D0E"
-      height="250px"
-    >
-      <v-toolbar-title class="white--text" style="padding-right: 100px">
-        WhiteWeb Project
-      </v-toolbar-title>
-      <v-btn id="home" @click="home"
-             text color="white" style="margin-right: 40px">HOME</v-btn>
-      <v-btn id="exhibition" @click="wExhibition"
-             text color="white" style="margin-right: 40px">WW EXHIBITION</v-btn>
-      <v-btn id="information" text color="white"
-             style="margin-right: 40px">INFORMATION</v-btn>
+  <div>
       <v-btn id="gallery" @click="$router.push('BoardGalleryPage')" text color="white"
              style="margin-right: 40px">BOARD GALLERY</v-btn>
       <div class="home">
@@ -40,17 +24,7 @@
           </v-btn>
         </div>
       </div>
-    </v-app-bar>
-
-    <v-container>
-      <v-content id="content"
-        style="padding: 0px 0px"
-        align="center"
-      >
-        <slot name="content"></slot>
-      </v-content>
-    </v-container>
-  </v-app>
+  </div>
 </template>
 
 <script>

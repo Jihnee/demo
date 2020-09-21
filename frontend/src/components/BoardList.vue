@@ -1,13 +1,15 @@
 <template>
   <div>
-    <table class="trol" border="5" bordercolor="yellow" style="center">
-      <tr align="center">
-        <th align="center" width="100">NO.</th>
-        <th align="center" width="420">TITLE </th>
-        <th align="center" width="200">WRITER </th>
-        <th align="center" width="250">REGISTRATION DATE </th>
-      </tr>
-
+    <table>
+      <tr-component
+        v-for="(rowdata, index) in tableData"
+        :key="index"
+        :row-data="rowData"
+        :row-index="index"
+        :table-data="tableData"
+        v-on:updateTableData="updateTableData"
+        >
+      </tr-component>
       <tr v-if="!boards || (Array.isArray(boards) && boards.length === 0)">
         <td colspan="4">
           ☞ ⓝⓞ  ㉠ㅔ㉦ㅣ물  ΝΘω ☜

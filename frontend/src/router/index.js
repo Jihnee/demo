@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import LoginPage from '../views/LoginPage.vue'
 import SignupPage from '../views/SignupPage.vue'
-import WexhibitionPage from '../views/WexhibitionPage.vue'
+import ExhibitionPage from '../views/ExhibitionPage.vue'
 
 import BoardGalleryPage from '../views/BoardGalleryPage.vue'
 import BoardRegisterPage from '../views/BoardRegisterPage.vue'
@@ -35,10 +35,10 @@ const routes = [
     }
   },
   {
-    path: '/WexhibitionPage',
-    name: 'WexhibitionPage',
+    path: '/Exhibition',
+    name: 'Exhibition',
     components: {
-      default: WexhibitionPage
+      default: ExhibitionPage
     }
   },
   {

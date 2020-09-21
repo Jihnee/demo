@@ -1,28 +1,24 @@
 <template>
-  <div>
-    <Layout>
-      <template #content>
-        <body>
-          <p class="jb-default"><br>
-            <span>☆★ ♨WELCOME to WhiteWeb♨ ★☆</span>
-          </p>
-        </body>
-        <LoginForm @submit="onSubmit" ></LoginForm>
-      </template>
-    </Layout>
-  </div>
+  <v-parallax src="@/assets/photo3.jpg" style="height: 1000px">
+    <p class="jb-default" style="text-align: center; font-weight: bolder; padding-top: 50px"><br>
+      <span style="color: #37474F; background-color: #F9FBE7; box-shadow: 0px 100px #9E9D24;
+                  font-size: 80px; padding: 10px 100px;
+                  text-decoration: line-through #69F0AE">
+        Web LABO</span>
+    </p>
+    <v-spacer></v-spacer>
+    <LoginForm @submit="onSubmit" ></LoginForm>
+  </v-parallax>
 </template>
 
 <script>
 import LoginForm from '@/components/LoginForm.vue'
-import Layout from '@/components/Layout'
 import { mapActions, mapGetters, mapState } from 'vuex'
 
 export default {
   name: 'LoginPage',
   components: {
-    LoginForm,
-    Layout
+    LoginForm
   },
   methods: {
     onSubmit (payload) {
@@ -32,7 +28,7 @@ export default {
         this.$router.push({ name: 'Home' })
       }).catch(err => {
         // alert(err.response.data.message)
-        alert('Something Fail: ', err)
+        alert('다시 시도해주세요: ', err)
       })
     },
     ...mapActions(['login'])
@@ -45,5 +41,8 @@ export default {
 </script>
 
 <style>
-  .jb-default { font-size: 32px; }
+  .jb-default {
+    font-size: 32px;
+    font-style: italic;
+  }
 </style>

@@ -1,29 +1,16 @@
 <template>
-  <div id="board">
-    <layout>
-      <template #content>
-        <p class="body-default">
-          <br><span>※『 ㉠ㅔ㉦ㅣ㉺㉡ 』※
-          <br><br>
-          ※ 새로고침을 함부로 누르지 마시오 ※
-          </span>
-        </p>
-          <br><v-row justify="center">
-            <div class="BT">
-              <v-btn class="BT" @click="$router.push('BoardRegisterPage')"
-                outlined color="lime accent-3 black--text">
-                ⓒⓡⓔⓐⓣⓔ → ⓝⓔⓦ ←  ⓑⓞⓐⓡⓓ
-              </v-btn>
-            </div>
-          </v-row>
-        <br><board-list/>
-      </template>
-    </layout>
+  <div class="board" style="height: 2000px">
+    <p class="body-default"><br>
+      <span style="font-weight: bolder; padding-left: 60px; font-size: 50px">BOARD GALLERY</span>
+    </p>
+    <br><board-list/>
+    <button @click="$router.push('BoardRegisterPage')" style="font-weight: bolder; font-size: 20px; color: gray">
+      CREATE NEW BOARD
+    </button>
   </div>
 </template>
 
 <script>
-import Layout from '../components/Layout'
 import BoardList from '../components/BoardList'
 
 import { mapState, mapActions } from 'vuex'
@@ -31,7 +18,6 @@ import { mapState, mapActions } from 'vuex'
 export default {
   name: 'BoardGalleryPage',
   components: {
-    Layout,
     BoardList
   },
   computed: {
@@ -51,7 +37,12 @@ export default {
 </script>
 
 <style>
-  .body-default {
+.body-default {
     color: yellow;
-    font-size: 32px; }
+    font-size: 32px;
+}
+.board {
+  background: url('../assets/photo4.jpg') no-repeat right;
+  background-size: 1200px;
+}
 </style>
