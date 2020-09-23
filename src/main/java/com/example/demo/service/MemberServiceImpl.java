@@ -60,38 +60,6 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public Member read(Long userNo) throws Exception {
-        log.info("Member Service read()");
-
-        return repository.getOne(userNo);
-    }
-
-    @Override
-    public void modify(Member member) throws Exception {
-        Member memEntity = repository.getOne(member.getUserNo());
-        memEntity.setUserName(member.getUserName());
-
-        List<MemberAuth> memberAuthList = memEntity.getAuthList();
-        List<MemberAuth> authList = member.getAuthList();
-
-        for(int i = 0; i < authList.size(); i++) {
-            MemberAuth auth = authList.get(i);
-
-            if(i < memberAuthList.size()) {
-                MemberAuth memberAuth = memberAuthList.get(i);
-                memberAuth.setAuth(auth.getAuth());
-            }
-        }
-
-        repository.save(memEntity);
-    }
-
-    @Override
-    public void remove(Long userNo) throws Exception {
-        repository.deleteById(userNo);
-    }
-
-    @Override
     public List<Member> list() throws Exception {
         List<Object[]> valArrays = repository.listAllMember();
         List<Member> memberList = new ArrayList<Member>();

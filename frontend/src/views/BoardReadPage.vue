@@ -47,7 +47,7 @@ export default {
       axios.delete(`http://localhost:24688/boards/${boardNo}`)
         .then(res => {
           alert('Delete Success')
-          this.$router.push({ name: 'BoardListPage' })
+          this.$router.push({ name: 'BoardGalleryPage' })
         })
         .catch(err => {
           alert(err.response.data.message)

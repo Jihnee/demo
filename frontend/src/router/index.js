@@ -49,6 +49,13 @@ const routes = [
     }
   },
   {
+    path: '/board',
+    name: 'BoardList',
+    components: {
+      default: BoardGalleryPage
+    }
+  },
+  {
     path: '/BoardRegisterPage',
     name: 'BoardRegisterPage',
     components: {

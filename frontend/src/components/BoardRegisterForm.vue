@@ -19,7 +19,7 @@
       </table>
       <div>
         <button type="submit">Register</button>
-        <router-link :to="{ name: 'BoardGalleryPage' }">
+        <router-link :to="{ name: 'BoardReadPage' }">
           Cancel
         </router-link>
       </div>

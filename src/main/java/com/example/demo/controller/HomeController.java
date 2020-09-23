@@ -13,15 +13,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.MessageCodeFormatter;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Locale;
 
 @Log
-@Controller
+@RestController
+@RequestMapping("/users")
 @CrossOrigin(origins = "http://localhost:8080", allowedHeaders = "*")
 public class HomeController {
     @Autowired
@@ -57,41 +56,12 @@ public class HomeController {
         return new ResponseEntity<>(service.list(), HttpStatus.OK);
     }
 
-    @GetMapping("/{userNo}")
-    public ResponseEntity<Member> read(@PathVariable("userNo") Long userNo) throws Exception {
-        Member member = service.read(userNo);
-
-        return new ResponseEntity<>(member, HttpStatus.OK);
-    }
-
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
-    @DeleteMapping("/{userNo}")
-    public ResponseEntity<Void> remove(@PathVariable("userNo") Long userNo) throws Exception {
-        service.remove(userNo);
-
-        return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
-    }
-
-    @PutMapping("/{userNo}")
-    public ResponseEntity<Member> modify(@PathVariable("userNo") Long userNo,
-                                         @Validated @RequestBody Member member)
-            throws Exception {
-        log.info("modify - member.getUserName(): " + member.getUserName());
-        log.info("modify - userNo: " + userNo);
-
-        member.setUserNo(userNo);
-        service.modify(member);
-
-        return new ResponseEntity<>(member, HttpStatus.OK);
-    }
-
     @RequestMapping(value = "/users/setup",
             method = RequestMethod.POST,
             produces = "text/plain;charset=UTF-8")
     public ResponseEntity<String> setupAdmin(@Validated @RequestBody Member member)
             throws Exception {
         log.info("setupAdmin: member.getUserName(): " + member.getUserName());
-        log.info("setupAdmin: service.countAll(): " + service.countAll());
 
             String inputPassword = member.getUserPw();
             member.setUserPw(passwordEncoder.encode(inputPassword));
@@ -103,7 +73,7 @@ public class HomeController {
 
     }
 
-    @GetMapping("/myinfo")
+    @GetMapping("myinfo")
     public ResponseEntity<MemberAuth> getMyInfo(
             @RequestHeader (name="Authorization") String header) throws Exception {
         Long userNo = AuthUtil.getUserNo(header);

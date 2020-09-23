@@ -22,7 +22,7 @@ export default {
 
       commit(SET_ACCESS_TOKEN, accessToken)
 
-      return axios.get('http://localhost:24688/myinfo')
+      return axios.get('http://localhost:24688/users/myinfo')
     }).then(res => {
       console.log('After Get Auth Info')
       commit(SET_MY_INFO, res.data)
@@ -30,7 +30,7 @@ export default {
   },
   loginByToken ({ commit }, token) {
     commit(SET_ACCESS_TOKEN, token)
-    return axios.get('http://localhost:24688/myinfo')
+    return axios.get('http://localhost:24688/users/myinfo')
       .then(res => {
         commit(SET_MY_INFO, res.data)
       })

@@ -17,7 +17,7 @@ public class MemberAuthRepository {
 
     public MemberAuth checkAuth(Long userNo) throws Exception {
         List<MemberAuth> results = jdbcTemplate.query(
-            "select user_no, auth from member_auth where user_auth_no = ?",
+            "select user_no, auth from member_auth where user_no = ?",
             new RowMapper<MemberAuth>() {
                 @Override
                 public MemberAuth mapRow(ResultSet rs, int rowNum) throws SQLException {

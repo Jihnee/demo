@@ -22,7 +22,7 @@ export default {
           console.log(res)
           alert('Posting Success')
           this.$router.push({
-            name: 'BoardGalleryPage',
+            name: 'BoardReadPage',
             params: { boardNo: res.data.boardNo.toString() }
           })
         })

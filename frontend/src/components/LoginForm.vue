@@ -13,6 +13,7 @@
       <v-col cols="5" style="background-color: #42A5F5; border-radius: 10px 80px 30px 80px;
                             margin-bottom: 150px; margin-left: 150px">
         <v-text-field
+          type="password"
           v-model="password"
           label="Password"
           clearable>
