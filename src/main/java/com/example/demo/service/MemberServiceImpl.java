@@ -40,8 +40,15 @@ public class MemberServiceImpl implements MemberService {
 
     }
 
+    private Boolean validateDuplicateMember(Member member) {
+        if(!(repository.findByUserId(member.getUserId()).isEmpty())){
+            return true;
+        }
+        return false;
+    }
+
     @Override
-    public void setupMember(Member member) throws Exception {
+    public Boolean setupMember(Member member) throws Exception {
         Member memEntity = new Member();
         memEntity.setUserId(member.getUserId());
         memEntity.setUserPw(member.getUserPw());
@@ -53,10 +60,15 @@ public class MemberServiceImpl implements MemberService {
 
         MemberAuth memberAuth = new MemberAuth();
         memberAuth.setAuth("ROLE_ADMIN");
-
-        memEntity.addAuth(memberAuth);
-
-        repository.save(memEntity);
+        Boolean mck = validateDuplicateMember(memEntity);
+        if(mck) {
+            System.out.println("이미 존재");
+            return false;
+        }else {
+            memEntity.addAuth(memberAuth);
+            repository.save(memEntity);
+            return true;
+        }
     }
 
     @Override

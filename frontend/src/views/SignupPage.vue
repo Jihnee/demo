@@ -29,10 +29,17 @@ export default {
       const { userId, userName, userPw, fex, fartist, usere } = payload
       axios.post('http://localhost:24688/users/setup', { userId, userName, userPw, fex, fartist, usere })
         .then(res => {
-          alert('성공적으로 가입되었습니다. ')
-          this.$router.push({
-            name: 'Home'
-          })
+          if (res.data) {
+            alert('회원가입이 성공했습니다.')
+            this.$router.push({
+              name: 'Home'
+            })
+          } else {
+            alert('이미 가입 되어있는 아이디 입니다.')
+            this.$router.push({
+              name: 'SignupPage'
+            })
+          }
         })
         .catch(err => {
           alert(err.response.data)

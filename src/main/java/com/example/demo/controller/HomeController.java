@@ -56,10 +56,9 @@ public class HomeController {
         return new ResponseEntity<>(service.list(), HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/users/setup",
-            method = RequestMethod.POST,
-            produces = "text/plain;charset=UTF-8")
-    public ResponseEntity<String> setupAdmin(@Validated @RequestBody Member member)
+    @RequestMapping(value = "/setup",
+            method = RequestMethod.POST)
+    public ResponseEntity<Boolean> setupAdmin(@Validated @RequestBody Member member)
             throws Exception {
         log.info("setupAdmin: member.getUserName(): " + member.getUserName());
 
@@ -67,9 +66,9 @@ public class HomeController {
             member.setUserPw(passwordEncoder.encode(inputPassword));
 
 
-            service.setupMember(member);
+            Boolean mck = service.setupMember(member);
 
-            return new ResponseEntity<>("SUCCESS", HttpStatus.OK);
+            return new ResponseEntity<>(mck, HttpStatus.OK);
 
     }
 

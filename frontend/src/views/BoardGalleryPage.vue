@@ -26,9 +26,6 @@ export default {
   created () {
     this.fetchBoardList()
   },
-  mounted () {
-    console.log('mounted')
-  },
   methods: {
     ...mapActions(['fetchBoardList'])
   }
