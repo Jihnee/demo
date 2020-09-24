@@ -9,7 +9,8 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Timestamp;
+
 
 @Getter
 @Setter
@@ -34,11 +35,11 @@ public class BoardGallery {
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
     @CreationTimestamp
-    private Date regDate;
+    private Timestamp regDate;
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
     @UpdateTimestamp
-    private Date upDate;
+    private Timestamp upDate;
 
 
 

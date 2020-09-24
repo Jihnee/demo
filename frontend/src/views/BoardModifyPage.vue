@@ -1,6 +1,6 @@
 <template>
   <div align="center">
-    <board-modify-form v-if="board" :boardGallery="boardGallery" @submit="onSubmit"/>
+    <board-modify-form v-if="boardGallery" :boardGallery="boardGallery" @submit="onSubmit"/>
     <p v-else> 로딩중입니다 </p>
  </div>
 </template>
@@ -36,7 +36,7 @@ export default {
     onSubmit (payload) {
       const { title, content } = payload
       console.log('BoardModifyPage payload: ' + payload)
-      axios.put(`http://localhost:7777/boards/${this.boardNo}`, { title, content })
+      axios.put(`http://localhost:24688/boards/${this.boardNo}`, { title, content })
         .then(res => {
           alert('Modify Success')
           console.log('res: ' + res.data)

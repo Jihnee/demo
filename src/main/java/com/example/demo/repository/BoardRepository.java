@@ -69,7 +69,7 @@ public class BoardRepository {
                         boardGallery.setTitle(rs.getString("title"));
                         boardGallery.setContent(rs.getString("content"));
                         boardGallery.setWriter(rs.getString("writer"));
-                        boardGallery.setRegDate(rs.getDate("reg_date"));
+                        boardGallery.setRegDate(rs.getTimestamp("reg_date"));
                         return boardGallery;
                     }
                 });
@@ -89,7 +89,7 @@ public class BoardRepository {
                         boardGallery.setTitle(rs.getString("title"));
                         boardGallery.setWriter(rs.getString("writer"));
                         boardGallery.setContent(rs.getString("content"));
-                        boardGallery.setRegDate(rs.getDate("reg_date"));
+                        boardGallery.setRegDate(rs.getTimestamp("reg_date"));
 
                         System.out.println("BoardRepository: " + boardGallery);
 

@@ -25,7 +25,7 @@
       </table>
 
       <div>
-        <button type="submit">Modify</button>
+        <button type="submit">Edit</button>
         <router-link :to="{ name: 'BoardReadPage', params: { boardNo: boardGallery.boardNo.toString() } }">
          Cancel
         </router-link>
