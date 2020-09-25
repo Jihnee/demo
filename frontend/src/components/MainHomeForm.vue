@@ -7,7 +7,7 @@
         ONLINE EXHIBITION
       </v-btn>
       <v-spacer></v-spacer>
-      <v-btn id="info" @click="$router.push('info')"
+      <v-btn id="info" @click="$router.push('InfoPage')"
              rounded color="white" style="margin-left: 1100px; margin-top: 10px;"> GET INFORMATION</v-btn>
       <v-spacer></v-spacer>
       <v-btn id="gallery" @click="$router.push('BoardGalleryPage')"

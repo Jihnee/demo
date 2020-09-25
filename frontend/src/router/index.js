@@ -9,6 +9,7 @@ import BoardGalleryPage from '../views/BoardGalleryPage.vue'
 import BoardRegisterPage from '../views/BoardRegisterPage.vue'
 import BoardReadPage from '../views/BoardReadPage.vue'
 import BoardModifyPage from '../views/BoardModifyPage.vue'
+import InfoPage from '../views/InfoPage'
 
 // Login System
 
@@ -39,6 +40,13 @@ const routes = [
     name: 'Exhibition',
     components: {
       default: ExhibitionPage
+    }
+  },
+  {
+    path: '/InfoPage',
+    name: 'InfoPage',
+    components: {
+      default: InfoPage
     }
   },
   {

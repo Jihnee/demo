@@ -38,9 +38,9 @@ export default {
 <style>
 .bg {
    position: fixed;
-   left: 7%;
    width: 130%;
    height: 200%;
    background-image: url(../assets/photodd.jpg);
+   background-repeat: repeat-x;
 }
 </style>
