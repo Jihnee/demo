@@ -30,13 +30,13 @@
     </table>
     <div class="btn-cover">
       <br><button :disabled="pageNum === 0"
-              @click="prevPage" class="page-btn" style="margin-left: 300px;">
+              @click="prevPage" class="page-btn" style="margin-left: 300px; color: white; padding: 10px">
         이전
       </button>&nbsp;
       <span class="page-count" style="background-color: #CFD8DC; border-radius: 20px 20px 20px 20px; font-family: Impact, Charcoal, sans-serif;
-                                      font-style: oblique  ">{{ pageNum + 1 }} / {{ pageCount }}</span>&nbsp;
+                                      font-style: oblique; padding: 10px">{{ pageNum + 1 }} / {{ pageCount }}</span>&nbsp;
       <button :disabled="pageNum >= pageCount - 1"
-              @click="nextPage" class="page-btn">
+              @click="nextPage" class="page-btn" style="color: white; padding: 10px">
         다음
       </button>
     </div>

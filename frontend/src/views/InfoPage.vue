@@ -15,7 +15,7 @@ export default {
 
 <style>
 .backgggg {
-  background: url('../assets/images5.jpeg') no-repeat;
+  background: url('../assets/photo5.jpeg') center no-repeat;
   background-size: 1000px;
 }
 </style>

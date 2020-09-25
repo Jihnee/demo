@@ -1,5 +1,5 @@
 <template>
-  <div align="center">
+  <div class="dj" align="center" style="height: 1000px">
     <board-modify-form v-if="boardGallery" :boardGallery="boardGallery" @submit="onSubmit"/>
     <p v-else> 로딩중입니다 </p>
  </div>

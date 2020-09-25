@@ -3,7 +3,7 @@
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <table class="baack" style="width: 800px; font-style: oblique">
       <tr style="height: 30px">
-        <td align="center" style="font-weight: bolder; font-style: oblique">BOARD No. </td>
+        <td align="center" style="font-weight: bolder; font-style: oblique">BOARD NO </td>
         <td><input type="text" :value="boardGallery.boardNo" readonly></td>
       </tr>
       <tr style="height: 30px">
