@@ -1,6 +1,6 @@
 package com.example.demo.repository;
 
-import com.example.demo.entity.MemberAuth;
+import com.example.demo.entity.Member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -15,18 +15,15 @@ public class MemberAuthRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    public MemberAuth checkAuth(Long userNo) throws Exception {
-        List<MemberAuth> results = jdbcTemplate.query(
+    public Member checkAuth(Long userNo) throws Exception {
+        List<Member> results = jdbcTemplate.query(
             "select user_auth_no,user_no, auth from member_auth where user_no = ?",
-            new RowMapper<MemberAuth>() {
+            new RowMapper<Member>() {
                 @Override
-                public MemberAuth mapRow(ResultSet rs, int rowNum) throws SQLException {
-                    MemberAuth mAuth = new MemberAuth();
+                public Member mapRow(ResultSet rs, int rowNum) throws SQLException {
+                    Member mAuth = new Member();
 
                     mAuth.setUserNo(rs.getLong("user_no"));
-                    mAuth.setAuth(rs.getString("auth"));
-                    mAuth.setUserAuthNo(rs.getLong("user_auth_no"));
-
 
                     return mAuth;
                 }

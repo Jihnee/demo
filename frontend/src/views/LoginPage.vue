@@ -34,8 +34,8 @@ export default {
     ...mapActions(['login'])
   },
   computed: {
-    ...mapState(['myinfo']),
-    ...mapGetters(['isAuthorized'])
+    ...mapState(['infoToken']),
+    ...mapGetters(['isTrueAuth'])
   }
 }
 </script>

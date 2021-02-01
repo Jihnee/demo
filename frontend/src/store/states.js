@@ -1,9 +1,9 @@
 export default {
   count: 0,
   accessToken: '',
-  myinfo: null,
   lists: [],
-  isTrueSignUp: false,
+  infoToken: false,
+  isTrueSignUp: true,
   boards: [],
   boardGallery: null
 }

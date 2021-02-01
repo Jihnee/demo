@@ -1,6 +1,7 @@
 package com.example.demo.config;
 
 import com.example.demo.security.CustomAccessDeniedHandler;
+//import com.example.demo.security.CustomUserDetailsService;
 import com.example.demo.security.CustomUserDetailsService;
 import com.example.demo.security.JwtAuthenticationFilter;
 import com.example.demo.security.JwtAuthorizationFilter;
@@ -32,12 +33,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         log.info("security config ...");
 
-        // 이 부분을 자세히 파고 들어가면 너무 빡세지니 간단하게만 보면
         // 접근 거부, URL 요청이 올바른지,
-        // 권한을 가지고 있는지 등등을 설정하는 것이라 보면 됨
-        // (그냥 가져다 쓰도록 한다)
+        // 권한을 가지고 있는지 등등을 설정하는 것
         http.cors()
                 .and()
+                // CSRF - 사이트 간 요청 위조 방지를 위해 설
                 .csrf().disable()
                 .exceptionHandling()
                 // 커스텀 구간 createAccessDeniedHandler
@@ -57,11 +57,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(createUserDetailsService())
                 .passwordEncoder(createPasswordEncoder());
     }
-
     @Bean
     public PasswordEncoder createPasswordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
 
     // 커스텀 요소중 하나
     @Bean

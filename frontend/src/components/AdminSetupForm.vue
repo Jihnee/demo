@@ -67,8 +67,8 @@
           <v-text-field
             value=""
             label="E-mail address"
-            input type="email" v-model="usere"
-            :rules="[rules.required, rules.usere]"
+            input type="email" v-model="userE"
+            :rules="[rules.required, rules.userE]"
             style="font-weight: bolder; background-color: #FFB300;
                   border-radius: 30px 10px 10px 40px"
           ></v-text-field>
@@ -76,7 +76,7 @@
       </v-row>
     </v-container><br><br><br><br>
     <div class="ddd" style="margin-left: 800px">
-      <button type="submit" @click="submit" style="font-weight: bolder; font-size: 32px; color: white">SIGN IN</button>
+      <button type="submit" @click="submit" style="font-weight: bolder; font-size: 32px; color: white">SIGN UP</button>
     </div>
   </v-form>
 </template>
@@ -93,7 +93,7 @@ export default {
       userCPw: '',
       fex: '',
       fartist: '',
-      usere: '',
+      userE: '',
       rules: {
         required: value => !!value || 'Required.',
         counter: value => value.length <= 50 || 'Max 50 characters'
@@ -107,8 +107,8 @@ export default {
   methods: {
     submit () {
       console.log('this: ' + this.userId + ', ' + this.userName + ', ' + this.userPw)
-      const { userId, userName, userPw, fex, fartist, usere } = this
-      this.$emit('submit', { userId, userName, userPw, fex, fartist, usere })
+      const { userId, userName, userPw, fex, fartist, userE } = this
+      this.$emit('submit', { userId, userName, userPw, fex, fartist, userE })
     }
   }
 }

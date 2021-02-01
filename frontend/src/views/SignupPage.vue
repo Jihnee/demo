@@ -26,8 +26,9 @@ export default {
   methods: {
     onSubmit (payload) {
       console.log('payload: ' + payload.userId + ', ' + payload.userName + ', ' + payload.userPw)
-      const { userId, userName, userPw, fex, fartist, usere } = payload
-      axios.post('http://localhost:24688/users/setup', { userId, userName, userPw, fex, fartist, usere })
+      // payload 에 회원정보를 담아서 전달
+      const { userId, userName, userPw, fex, fartist, userE } = payload
+      axios.post('http://localhost:24688/users/signup', { userId, userName, userPw, fex, fartist, userE })
         .then(res => {
           if (res.data) {
             alert('회원가입이 성공했습니다.')

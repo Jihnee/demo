@@ -1,12 +1,13 @@
 import {
   SET_ACCESS_TOKEN,
-  SET_MY_INFO,
   DESTROY_ACCESS_TOKEN,
-  DESTROY_MY_INFO, FETCH_BOARD, FETCH_BOARD_LIST
+  DESTROY_MY_INFO, FETCH_BOARD, FETCH_BOARD_LIST, SET_MY_INFO
 } from './mutation-types'
 
 import axios from 'axios'
 import cookies from 'vue-cookies'
+
+// api -> action -> mutation -> state -> component
 
 export default {
   [SET_ACCESS_TOKEN] (state, accessToken) {
@@ -19,9 +20,9 @@ export default {
       cookies.set('accessToken', accessToken, '1h')
     }
   },
-  [SET_MY_INFO] (state, myinfo) {
-    if (myinfo) {
-      state.myinfo = myinfo
+  [SET_MY_INFO] (state, infoToken) {
+    if (infoToken) {
+      state.infoToken = infoToken
     }
   },
   [DESTROY_ACCESS_TOKEN] (state) {
@@ -30,7 +31,7 @@ export default {
     cookies.remove('accessToken')
   },
   [DESTROY_MY_INFO] (state) {
-    state.myinfo = null
+    state.infoToken = null
   },
   [FETCH_BOARD] (state, boardGallery) {
     state.boardGallery = boardGallery

@@ -40,7 +40,7 @@ public class Member {
     private String fartist;
 
     @Column(length = 30, nullable = false)
-    private String usere;
+    private String userE;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "user_no")
@@ -53,6 +53,7 @@ public class Member {
     public void clearAuthList() {
         authList.clear();
     }
+
 }
 
 

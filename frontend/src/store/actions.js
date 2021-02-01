@@ -9,6 +9,7 @@ import {
 
 import axios from 'axios'
 
+// commit에 로그인 토큰(accessToken)과 정보를 전달 -중간다리 찾아오
 export default {
   login ({ commit }, payload) {
     console.log('actions login')
@@ -22,7 +23,7 @@ export default {
 
       commit(SET_ACCESS_TOKEN, accessToken)
 
-      return axios.get('http://localhost:24688/users/myinfo')
+      return axios.get('http://localhost:24688/users/mminfo')
     }).then(res => {
       console.log('After Get Auth Info')
       commit(SET_MY_INFO, res.data)
@@ -30,8 +31,9 @@ export default {
   },
   loginByToken ({ commit }, token) {
     commit(SET_ACCESS_TOKEN, token)
-    return axios.get('http://localhost:24688/users/myinfo')
+    return axios.get('http://localhost:24688/users/mminfo')
       .then(res => {
+        console.log('loginByToken')
         commit(SET_MY_INFO, res.data)
       })
   },

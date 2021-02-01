@@ -1,5 +1,5 @@
 <template>
-  <v-form @submit.prevent="submit" >
+  <v-form @submit.prevent="{submit}" >
     <v-row>
       <v-col cols="3"
              style="background-color: #FFB300; padding-bottom: 5px; border-radius: 10px 20px 30px 10px;
@@ -20,7 +20,7 @@
         </v-text-field>
       </v-col>
       <div class="text-center">
-        <button @click="submit" :isAuthorized="isAuthorized"
+        <button @click="submit" :isAuthorized="isTrueAuth"
                   style="padding-left: 10px; height: 100px">CONNECT<br>CONNECT<br>CONNECT<br>CONNECT
           <br>CONNECT</button>
       </div>
@@ -29,6 +29,9 @@
 </template>
 
 <script>
+
+import { mapGetters, mapState } from 'vuex'
+
 export default {
   name: 'LoginForm',
   data () {
@@ -42,7 +45,15 @@ export default {
       console.log('LoginForm submit()')
       const { userid, password } = this
       this.$emit('submit', { userid, password })
+    },
+    isAuthorized (state) {
+      console.log('infoToken()')
+      return state.infoToken
     }
+  },
+  computed: {
+    ...mapState(['infoToken']),
+    ...mapGetters(['isTrueAuth'])
   }
 }
 </script>

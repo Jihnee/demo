@@ -1,14 +1,11 @@
 <template>
   <div class="mainhome">
     <p class="title" style="margin-left: 900px;">WeB LABORATOIRE</p><br>
-    <div id="login header" v-if="isAuthorized">
+    <div id="login header" v-if="isTrueAuth">
       <v-btn @click="$router.push('Exhibition')" rounded color="lime darken-2 white--text"
              style="margin-left: 1100px; margin-top: 40px;">
         ONLINE EXHIBITION
       </v-btn>
-      <v-spacer></v-spacer>
-      <v-btn id="info" @click="$router.push('InfoPage')"
-             rounded color="white" style="margin-left: 1100px; margin-top: 10px;"> GET INFORMATION</v-btn>
       <v-spacer></v-spacer>
       <v-btn id="gallery" @click="$router.push('BoardGalleryPage')"
              rounded color="white" style="margin-left: 1100px; margin-top: 10px;"> BOARD GALLERY</v-btn>
@@ -24,9 +21,9 @@
       ONLINE EXHIBITION
     </v-btn><br>
     <v-btn id="login" @click="$router.push('LoginPage')" rounded color="lime darken-2 white--text"
-           style="margin-left: 1100px; margin-top: 10px;"> LOGIN </v-btn><br>
+           style="margin-left: 1100px; margin-top: 10px;"> SIGN IN </v-btn><br>
     <v-btn id="signup" @click="$router.push('SignupPage')" rounded color="lime" style="margin-left: 1100px; margin-top: 10px;">
-      SIGN IN
+      SIGN UP
     </v-btn>
     </div>
   </div>
@@ -44,8 +41,9 @@ export default {
     },
     ...mapActions(['logout'])
   },
+  // life cycle vuejs.
   computed: {
-    ...mapGetters(['isAuthorized'])
+    ...mapGetters(['isTrueAuth'])
   }
 }
 </script>
