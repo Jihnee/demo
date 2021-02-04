@@ -20,7 +20,7 @@
         </v-text-field>
       </v-col>
       <div class="text-center">
-        <button @click="submit" :isAuthorized="isTrueAuth"
+        <button @click="submit"
                   style="padding-left: 10px; height: 100px">CONNECT<br>CONNECT<br>CONNECT<br>CONNECT
           <br>CONNECT</button>
       </div>
@@ -29,8 +29,6 @@
 </template>
 
 <script>
-
-import { mapGetters, mapState } from 'vuex'
 
 export default {
   name: 'LoginForm',
@@ -45,15 +43,7 @@ export default {
       console.log('LoginForm submit()')
       const { userid, password } = this
       this.$emit('submit', { userid, password })
-    },
-    isAuthorized (state) {
-      console.log('infoToken()')
-      return state.infoToken
     }
-  },
-  computed: {
-    ...mapState(['infoToken']),
-    ...mapGetters(['isTrueAuth'])
   }
 }
 </script>

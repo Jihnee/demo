@@ -17,7 +17,7 @@ export default {
       username: payload.userid,
       password: payload.password
     }).then(res => {
-      console.log('actions after post')
+      console.log('actions after security')
       const { authorization } = res.headers
       const accessToken = authorization.substring(7)
 
@@ -29,7 +29,7 @@ export default {
       commit(SET_MY_INFO, res.data)
     })
   },
-  loginByToken ({ commit }, token) {
+  loginTokeninit ({ commit }, token) {
     commit(SET_ACCESS_TOKEN, token)
     return axios.get('http://localhost:24688/users/mminfo')
       .then(res => {

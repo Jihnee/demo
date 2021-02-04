@@ -2,8 +2,7 @@ export default {
   count: 0,
   accessToken: '',
   lists: [],
-  infoToken: false,
-  isTrueSignUp: true,
+  isAuthorized: true,
   boards: [],
   boardGallery: null
 }

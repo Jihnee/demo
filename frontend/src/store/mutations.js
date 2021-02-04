@@ -1,7 +1,8 @@
 import {
   SET_ACCESS_TOKEN,
   DESTROY_ACCESS_TOKEN,
-  DESTROY_MY_INFO, FETCH_BOARD, FETCH_BOARD_LIST, SET_MY_INFO
+  DESTROY_MY_INFO,
+  FETCH_BOARD, FETCH_BOARD_LIST, SET_MY_INFO
 } from './mutation-types'
 
 import axios from 'axios'
@@ -10,6 +11,7 @@ import cookies from 'vue-cookies'
 // api -> action -> mutation -> state -> component
 
 export default {
+  // state에 있는 accessToken을 쓰겠다는 뜻
   [SET_ACCESS_TOKEN] (state, accessToken) {
     if (accessToken) {
       state.accessToken = accessToken
@@ -20,9 +22,9 @@ export default {
       cookies.set('accessToken', accessToken, '1h')
     }
   },
-  [SET_MY_INFO] (state, infoToken) {
-    if (infoToken) {
-      state.infoToken = infoToken
+  [SET_MY_INFO] (state, isAuthorized) {
+    if (isAuthorized) {
+      state.isAuthorized = isAuthorized
     }
   },
   [DESTROY_ACCESS_TOKEN] (state) {

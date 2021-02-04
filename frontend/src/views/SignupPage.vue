@@ -5,23 +5,18 @@
       <span style="padding-left: 30px; font-size: 60px; font-style: italic; font-weight: bolder; color: gray;
                 text-decoration: underline indianred">WL</span>
     </p>
-  <admin-setup-form v-if="isSignUp" @submit="onSubmit" :isTrueSignUp="isSignUp"></admin-setup-form>
+  <admin-setup-form @submit="onSubmit"></admin-setup-form>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
 import AdminSetupForm from '../components/AdminSetupForm.vue'
-import { mapState, mapGetters } from 'vuex'
 
 export default {
   name: 'SignupPage',
   components: {
     AdminSetupForm
-  },
-  computed: {
-    ...mapState(['isTrueSignUp']),
-    ...mapGetters(['isSignUp'])
   },
   methods: {
     onSubmit (payload) {
@@ -36,7 +31,7 @@ export default {
               name: 'Home'
             })
           } else {
-            alert('이미 가입 되어있는 아이디 입니다.')
+            alert('가입 실패')
             this.$router.push({
               name: 'SignupPage'
             })

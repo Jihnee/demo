@@ -50,10 +50,6 @@ public class Member {
         authList.add(auth);
     }
 
-    public void clearAuthList() {
-        authList.clear();
-    }
-
 }
 
 

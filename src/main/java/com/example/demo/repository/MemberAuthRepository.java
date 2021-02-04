@@ -15,17 +15,18 @@ public class MemberAuthRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+
     public Member checkAuth(Long userNo) throws Exception {
         List<Member> results = jdbcTemplate.query(
-            "select user_auth_no,user_no, auth from member_auth where user_no = ?",
+            "select user_no from member where user_no = ?",
             new RowMapper<Member>() {
                 @Override
                 public Member mapRow(ResultSet rs, int rowNum) throws SQLException {
-                    Member mAuth = new Member();
+                    Member member = new Member();
 
-                    mAuth.setUserNo(rs.getLong("user_no"));
+                    member.setUserNo(rs.getLong("user_no"));
 
-                    return mAuth;
+                    return member;
                 }
             }, userNo
         );

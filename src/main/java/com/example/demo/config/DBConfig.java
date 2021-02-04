@@ -18,10 +18,10 @@ public class DBConfig {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUrl(
-                "jdbc:mysql://localhost:3306/testdb?serverTimezone=UTC&useSSL=false"
+                "jdbc:mysql://localhost:3306/jinhee_db?serverTimezone=UTC&useSSL=false"
         );
-        dataSource.setUsername("dbuser");
-        dataSource.setPassword("1111");
+        dataSource.setUsername("root");
+        dataSource.setPassword("1234");
         return dataSource;
     }
 }

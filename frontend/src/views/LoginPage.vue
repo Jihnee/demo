@@ -13,7 +13,7 @@
 
 <script>
 import LoginForm from '@/components/LoginForm.vue'
-import { mapActions, mapGetters, mapState } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'LoginPage',
@@ -34,7 +34,6 @@ export default {
     ...mapActions(['login'])
   },
   computed: {
-    ...mapState(['infoToken']),
     ...mapGetters(['isTrueAuth'])
   }
 }

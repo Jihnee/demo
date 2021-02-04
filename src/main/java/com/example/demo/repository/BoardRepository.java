@@ -47,6 +47,8 @@ public class BoardRepository {
                         ps.setString(3, boardGallery.getWriter());
                         return ps;
                     }
+                    // jdbcTemplate.update 메소드가 변경된 행의 개수만을 리턴하므로 자동생성 된 키 값을 알 수가 없음.
+                    // 그래서 keyHolder를 사용해서 칼럼 값을 가져오는 것
                 }, keyHolder);
 
         boardGallery.setBoardNo(keyHolder.getKey().longValue());

@@ -16,7 +16,7 @@ function init () {
   const savedToken = cookies.get('accessToken')
 
   if (savedToken) {
-    return store.dispatch('loginByToken', savedToken)
+    return store.dispatch('loginTokeninit', savedToken)
   } else {
     return Promise.resolve()
   }
