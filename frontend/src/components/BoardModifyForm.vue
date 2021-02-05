@@ -12,7 +12,7 @@
         </tr>
         <tr style="height: 30px">
           <td align="center" style="font-weight: bolder; font-style: oblique">TITLE</td>
-          <td><input type="text" :value="boardGallery.title" disabled></td>
+          <td><input type="text" :value="boardGallery.title"></td>
         </tr>
         <tr style="height: 30px">
           <td align="center" style="font-weight: bolder; font-style: oblique">WRITER</td>

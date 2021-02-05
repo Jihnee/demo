@@ -7,7 +7,7 @@
 
 <script>
 import BoardModifyForm from '@/components/BoardModifyForm'
-import { mapState, mapActions } from 'vuex'
+import { mapState } from 'vuex'
 import axios from 'axios'
 
 export default {
@@ -48,10 +48,7 @@ export default {
         .catch(err => {
           alert(err.response.data.message)
         })
-    },
-    ...mapActions([
-      'fetchBoard'
-    ])
+    }
   }
 }
 </script>

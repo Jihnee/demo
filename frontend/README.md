@@ -22,3 +22,14 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### npm run start 오류시
+```
+npm install -g babel
+```
+
+### npm update
+```
+npm install -g npm
+
+```

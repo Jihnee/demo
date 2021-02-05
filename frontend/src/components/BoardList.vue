@@ -1,8 +1,7 @@
 <template>
   <div>
     <br><button class="hoo3" @click="$router.push('/')" style="color: #9E9D24; padding: 130px;
-                                margin-left: 1300px">
-    &nbsp;
+                                margin-left: 800px">&nbsp;
     </button>
     <table class="tabl" border="1" style="border-radius: 400px 70px 50px 100px;
                                   margin-left: 300px; margin-top: 100px">
@@ -13,7 +12,7 @@
         <th width="150" style="color: black">DATE</th>
       </tr>
 
-      <tr v-if="!boards || (Array.isArray(boards) && boards.length === 0)">
+      <tr v-if="(Array.isArray(boards) && boards.length === 0)">
         <td colspan="4">
           ☞ ⓝⓞ  ㉠ㅔ㉦ㅣ물  ΝΘω ☜
         </td>

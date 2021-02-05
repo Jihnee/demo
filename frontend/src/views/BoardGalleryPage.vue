@@ -11,7 +11,7 @@
       CREATE NEW BOARD
     </button>
     <br><button class="hooo" @click="$router.push('/')"  style="background-color: #9E9D24; color: #9E9D24; padding: 150px; margin-top: 140px;
-                                margin-left: 1400px; border-radius: 80px 80px 100px 30px">
+                                margin-left: 100px; border-radius: 80px 80px 100px 30px">
     &nbsp;
   </button><br>
   </div>
@@ -37,6 +37,7 @@ export default {
 .board {
   background: url('../assets/photo4.jpg') no-repeat right;
   background-size: 1200px;
+  position: relative;
 }
 .hooo{
   background: url('../assets/photo2.jpg') 100%;

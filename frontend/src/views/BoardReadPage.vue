@@ -1,7 +1,6 @@
 <template>
   <div class="dj" align="center" style="height: 1000px">
     <board-read v-if="boardGallery" :boardGallery="boardGallery"/>
-    <p v-else> 로딩중입니다 </p>
     <router-link class="yyy" :to="{ name: 'BoardModifyPage', params: { boardNo } }">
        EDIT
     </router-link>
