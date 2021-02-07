@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.Member;
+import com.example.demo.repository.MemberAuthRepository;
 import com.example.demo.repository.MemberRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.ArrayList;
 
 @Service
 // 기능수행을 위한 설계도
@@ -17,6 +17,9 @@ public class MemberServiceImpl implements MemberService {
 
     @Autowired
     private MemberRepository repository;
+
+    @Autowired
+    private MemberAuthRepository authRepository;
 
     @Override
     public void registerMember(Member member) throws Exception {
@@ -33,6 +36,11 @@ public class MemberServiceImpl implements MemberService {
         // userNo는 입력값이 아니라 순차적으로 올라가도록 설정 > service countALl
         member.setUserNo(memEntity.getUserNo());
 
+    }
+
+    @Override
+    public List<Member> list() throws Exception {
+        return authRepository.list();
     }
 
 

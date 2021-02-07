@@ -5,3 +5,5 @@ export const DESTROY_MY_INFO = 'DESTROY_MY_INFO'
 
 export const FETCH_BOARD_LIST = 'FETCH_BOARD_LIST'
 export const FETCH_BOARD = 'FETCH_BOARD'
+
+export const FETCH_MEMBER_LIST = 'FETCH_MEMBER_LIST'

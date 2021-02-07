@@ -10,6 +10,8 @@ import BoardRegisterPage from '../views/BoardRegisterPage.vue'
 import BoardReadPage from '../views/BoardReadPage.vue'
 import BoardModifyPage from '../views/BoardModifyPage.vue'
 
+import ManagementPage from '../views/ManagementPage'
+
 // Login System
 
 Vue.use(VueRouter)
@@ -39,6 +41,13 @@ const routes = [
     name: 'Exhibition',
     components: {
       default: ExhibitionPage
+    }
+  },
+  {
+    path: '/ManagementPage',
+    name: 'ManagementPage',
+    components: {
+      default: ManagementPage
     }
   },
   {

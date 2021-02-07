@@ -6,6 +6,7 @@ import java.util.List;
 
 
 public interface MemberService {
-    public void registerMember(Member member) throws Exception;
-    public long countAll() throws Exception;
+    void registerMember(Member member) throws Exception;
+    List<Member> list() throws Exception;
+    long countAll() throws Exception;
 }

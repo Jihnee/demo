@@ -2,7 +2,7 @@ import {
   SET_ACCESS_TOKEN,
   DESTROY_ACCESS_TOKEN,
   DESTROY_MY_INFO,
-  FETCH_BOARD, FETCH_BOARD_LIST, SET_MY_INFO
+  FETCH_BOARD, FETCH_BOARD_LIST, SET_MY_INFO, FETCH_MEMBER_LIST
 } from './mutation-types'
 
 import axios from 'axios'
@@ -40,5 +40,8 @@ export default {
   },
   [FETCH_BOARD_LIST] (state, boards) {
     state.boards = boards
+  },
+  [FETCH_MEMBER_LIST] (state, member) {
+    state.member = member
   }
 }

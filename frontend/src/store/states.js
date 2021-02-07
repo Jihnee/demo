@@ -4,5 +4,6 @@ export default {
   lists: [],
   isAuthorized: true,
   boards: [],
-  boardGallery: null
+  boardGallery: null,
+  member: []
 }

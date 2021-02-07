@@ -4,7 +4,7 @@ import {
   DESTROY_ACCESS_TOKEN,
   DESTROY_MY_INFO,
   FETCH_BOARD_LIST,
-  FETCH_BOARD
+  FETCH_BOARD, FETCH_MEMBER_LIST
 } from './mutation-types'
 
 import axios from 'axios'
@@ -54,6 +54,14 @@ export default {
       .then(res => {
         console.log('fetchBoard - res: ' + res.data)
         commit(FETCH_BOARD, res.data)
+      })
+  },
+  memberList ({ commit }, userNo) {
+    console.log('memberList' + commit + ', userNo = ' + userNo)
+    return axios.get(`http://localhost:24688/memberList`)
+      .then(res => {
+        console.log(res.data)
+        commit(FETCH_MEMBER_LIST, res.data)
       })
   }
 }

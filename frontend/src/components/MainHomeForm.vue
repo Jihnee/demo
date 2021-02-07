@@ -14,6 +14,12 @@
              rounded color="white" style="margin-left: 1100px; margin-top: 10px;">
         LOGOUT
       </v-btn>
+      <v-spacer></v-spacer>
+      <div id="login autho" v-if="isAuthorized">
+        <v-btn @click="$router.push('ManagementPage')"
+               rounded color="white" style="margin-left: 1100px; margin-top: 10px;">
+          MEMBER MANAGEMENT</v-btn>
+      </div>
     </div>
     <div id="header" v-else>
     <v-btn @click="$router.push('Exhibition')" rounded color="lime darken-2 white--text"
@@ -43,7 +49,7 @@ export default {
   },
   // life cycle vuejs.
   computed: {
-    ...mapGetters(['isTrueAuth'])
+    ...mapGetters(['isTrueAuth', 'isAuthorized'])
   }
 }
 </script>

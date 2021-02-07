@@ -6,5 +6,8 @@ export default {
   },
   getBoard (state) {
     return state.boards
+  },
+  isAuthorized (state) {
+    return state.isAuthorized
   }
 }
